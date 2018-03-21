@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  CreatAccountVC.swift
 //  Smack
 //
 //  Created by Patrik Kemeny on 21/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class CreatAccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +18,7 @@ class LoginVC: UIViewController {
 
 
     @IBAction func closedPressed(_ sender: Any) {
-    //go back from login
-        dismiss(animated: true, completion: nil)
+   performSegue(withIdentifier: UNWIND, sender: nil)
     }
     
-    @IBAction func createAccountBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
-    }
 }

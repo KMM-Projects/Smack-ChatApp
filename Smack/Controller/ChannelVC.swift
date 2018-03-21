@@ -12,6 +12,10 @@ class ChannelVC: UIViewController {
     //Outlets
     
     @IBOutlet weak var loginBtn: UIButton! // shoudl change when log in to user name
+    //unwired Seque we want to jumt from CreateACCountVC to ChannelVC
+    @IBAction func prepareForUnwind(seque: UIStoryboardSegue){
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
