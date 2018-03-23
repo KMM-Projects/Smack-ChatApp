@@ -72,6 +72,11 @@ class AuthService{
         
     }
     
+    func loginUser() {
+        
+        
+    }
+    
 
 }
 
