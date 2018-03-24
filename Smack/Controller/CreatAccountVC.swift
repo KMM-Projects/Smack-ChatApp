@@ -26,6 +26,13 @@ class CreatAccountVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    //when apear this view with picket Avatar
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
+    }
 
     @IBAction func createAccountPressed(_ sender: Any) {
         //check Postman - for creating user we are sending just the emaila and the password
