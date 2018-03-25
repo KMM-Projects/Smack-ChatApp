@@ -41,4 +41,15 @@ let USER_EMAIL = "userEmail"
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8" 
 ]
+// Colors Constant
+let smackPurplePlaceHolder =  #colorLiteral(red: 0.2901960784, green: 0.3019607843, blue: 0.8470588235, alpha: 0.5)
+
+// Notification contants
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataC hanged")
+
+
+
+
+
+
 
