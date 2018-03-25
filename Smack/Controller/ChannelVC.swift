@@ -29,7 +29,14 @@ class ChannelVC: UIViewController {
     }
 
     @IBAction func loginBtnPresse(_ sender: Any) {
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
+        if AuthService.instance.isLoggedIn {
+            //show profile page without any seque 
+            let profile = ProfileVC() //extentionated
+            profile.modalPresentationStyle = .custom
+            present(profile, animated: true, completion: nil)
+        } else {
+        performSegue(withIdentifier: TO_LOGIN, sender: nil) //when we are not loged in
+        }
     }
     
     @objc func userDataDidChanged(_ notif: Notification){

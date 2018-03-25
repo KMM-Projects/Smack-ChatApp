@@ -112,8 +112,8 @@
                                 <rect key="frame" x="269" y="83" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zaM-gJ-NV0" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
-                                <rect key="frame" x="24" y="558" width="75" height="74"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zaM-gJ-NV0" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
+                                <rect key="frame" x="24" y="558" width="74" height="74"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nem-EH-0PF">
                                 <rect key="frame" x="0.0" y="113" width="375" height="411"/>
@@ -143,10 +143,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQf-7K-ehI">
-                                <rect key="frame" x="140" y="579" width="43" height="32"/>
+                                <rect key="frame" x="106" y="579" width="77" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="exs-Gs-9QT"/>
-                                    <constraint firstAttribute="width" constant="43" id="xuD-bW-GeD"/>
+                                    <constraint firstAttribute="width" constant="77" id="xuD-bW-GeD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Login">
