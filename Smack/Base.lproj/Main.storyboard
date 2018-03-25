@@ -236,6 +236,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="Yhe-sS-RPG" eventType="touchUpInside" id="y5b-9H-FcE"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="qIg-sD-yrn">
                                 <rect key="frame" x="62" y="140" width="250" height="86"/>
@@ -286,15 +289,21 @@
                                     <action selector="createAccountBtnPressed:" destination="Yhe-sS-RPG" eventType="touchUpInside" id="BCY-y0-fjj"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Y5D-s8-Fny">
+                                <rect key="frame" x="169" y="258" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qIg-sD-yrn" firstAttribute="top" secondItem="S0G-aI-8Cb" secondAttribute="bottom" constant="40" id="1MD-ew-X4P"/>
+                            <constraint firstItem="Y5D-s8-Fny" firstAttribute="centerY" secondItem="dSb-DE-dmJ" secondAttribute="centerY" constant="-100" id="AeH-vD-aS7"/>
                             <constraint firstItem="S0G-aI-8Cb" firstAttribute="top" secondItem="dSb-DE-dmJ" secondAttribute="top" constant="60" id="Fid-gf-WzV"/>
                             <constraint firstItem="gTt-bc-XYH" firstAttribute="trailing" secondItem="eXF-HU-uBv" secondAttribute="trailing" id="INb-cF-FKv"/>
                             <constraint firstItem="S0G-aI-8Cb" firstAttribute="centerX" secondItem="dSb-DE-dmJ" secondAttribute="centerX" id="LYm-Rk-uy6"/>
                             <constraint firstItem="p43-nK-ckE" firstAttribute="centerX" secondItem="dSb-DE-dmJ" secondAttribute="centerX" id="Mu7-EC-YCa"/>
                             <constraint firstItem="p43-nK-ckE" firstAttribute="top" secondItem="bsY-Lz-8UQ" secondAttribute="bottom" id="PFE-Wd-bML"/>
+                            <constraint firstItem="Y5D-s8-Fny" firstAttribute="centerX" secondItem="dSb-DE-dmJ" secondAttribute="centerX" id="mfX-3Z-kCh"/>
                             <constraint firstItem="eXF-HU-uBv" firstAttribute="top" secondItem="gTt-bc-XYH" secondAttribute="top" constant="8" id="nps-E7-GDo"/>
                             <constraint firstItem="bsY-Lz-8UQ" firstAttribute="centerX" secondItem="dSb-DE-dmJ" secondAttribute="centerX" id="rJL-Wm-g1X"/>
                             <constraint firstItem="bsY-Lz-8UQ" firstAttribute="top" secondItem="qIg-sD-yrn" secondAttribute="bottom" constant="40" id="rv3-ES-f7P"/>
@@ -303,6 +312,9 @@
                         <viewLayoutGuide key="safeArea" id="gTt-bc-XYH"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="sxd-AP-zIi" id="zne-8i-JCk"/>
+                        <outlet property="spinner" destination="Y5D-s8-Fny" id="Gcf-qK-5Ll"/>
+                        <outlet property="usernameTxt" destination="sxd-AP-zIi" id="z2h-5f-qUf"/>
                         <segue destination="8ha-jr-fwn" kind="show" identifier="toCreateAccount" id="AZE-R9-H0L"/>
                     </connections>
                 </viewController>

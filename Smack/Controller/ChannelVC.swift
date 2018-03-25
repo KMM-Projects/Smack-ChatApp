@@ -27,6 +27,12 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChanged(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil ) // always when this notification is than new account was created
         // we are listening and if that notification was bradcasted then we start function userDataDidChanged
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupUserInfo()
+        
+    }
 
     @IBAction func loginBtnPresse(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
@@ -40,6 +46,10 @@ class ChannelVC: UIViewController {
     }
     
     @objc func userDataDidChanged(_ notif: Notification){
+     setupUserInfo()
+    }
+    
+    func setupUserInfo(){
         if AuthService.instance.isLoggedIn { // we are logged in
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
@@ -49,7 +59,7 @@ class ChannelVC: UIViewController {
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
-            
         }
+        
     }
 }

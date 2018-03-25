@@ -23,8 +23,9 @@ typealias  CompletionHandler = (_ Success: Bool) -> () //CompletionHandler is al
 //URL CONSTANTS: HEROKU
 let BASE_URL = "https://patrikchattest.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
-let URL_LOGIN = "\(BASE_URL)account/login"
+let URL_LOGIN = "\(BASE_URL)account/login" // return email and Token
 let URL_USER_ADD = "\(BASE_URL)user/add"
+let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/" // + email in end //return details
 
 //Segues
 let TO_LOGIN = "toLogin"
@@ -41,6 +42,11 @@ let USER_EMAIL = "userEmail"
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8" 
 ]
+let BEARER_HEADER = [ // token with authorization token
+    "Authorization":"Bearer \(AuthService.instance.authToken)",
+    "Content-Type": "application/json; charset=utf-8"
+]
+
 // Colors Constant
 let smackPurplePlaceHolder =  #colorLiteral(red: 0.2901960784, green: 0.3019607843, blue: 0.8470588235, alpha: 0.5)
 
