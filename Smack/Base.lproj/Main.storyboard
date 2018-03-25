@@ -180,6 +180,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="xQf-7K-ehI" id="6jC-gc-uzp"/>
+                        <outlet property="userImg" destination="zaM-gJ-NV0" id="0To-iz-5Da"/>
                         <segue destination="Yhe-sS-RPG" kind="show" identifier="toLogin" id="PPt-9i-oyM"/>
                     </connections>
                 </viewController>

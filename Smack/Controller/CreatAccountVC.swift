@@ -80,6 +80,7 @@ class CreatAccountVC: UIViewController {
         let b = CGFloat(arc4random_uniform(255))/255
         
         bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
+        avatarColor = "[\(r),\(g),\(b),1]" //here we are saving to the database our color check it our in user mLab
         UIView.animate(withDuration: 0.6){
              self.userImg.backgroundColor = self.bgColor
         }

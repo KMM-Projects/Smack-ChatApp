@@ -20,6 +20,8 @@ class ChatVC: UIViewController {
         // ADD gesture recognizer for swipe back
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        // add and observer who is w8ting for the notification
+        
     }
 
 
