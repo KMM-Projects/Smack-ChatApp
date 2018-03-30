@@ -119,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="113" width="375" height="411"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ukh-tB-PZh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" id="Ukh-tB-PZh" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ukh-tB-PZh" id="Tj3-E0-QOX">
@@ -139,6 +139,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="cTy-OC-LlH" id="wMV-j4-Xyn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -180,6 +183,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="xQf-7K-ehI" id="6jC-gc-uzp"/>
+                        <outlet property="tableView" destination="nem-EH-0PF" id="YT7-PR-wHu"/>
                         <outlet property="userImg" destination="zaM-gJ-NV0" id="0To-iz-5Da"/>
                         <segue destination="Yhe-sS-RPG" kind="show" identifier="toLogin" id="PPt-9i-oyM"/>
                     </connections>
@@ -290,7 +294,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Y5D-s8-Fny">
-                                <rect key="frame" x="169" y="258" width="37" height="37"/>
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
                                 <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
