@@ -30,6 +30,9 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
         // add and observer who is w8ting for the notification
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChanged(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil ) // always when this notification is than new account was created
         // we are listening and if that notification was bradcasted then we start function userDataDidChanged
+       //observer thr notifications
+        NotificationCenter.default.addObserver(self , selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
+        
         SocketService.instance.getChannel { (succes) in
             if succes { //if we recive a new channel
                 self.tableView.reloadData()
@@ -58,6 +61,11 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
     @objc func userDataDidChanged(_ notif: Notification){
      setupUserInfo()
     }
+    //observation func
+    @objc func channelsLoaded(_ notif: Notification){
+     tableView.reloadData()
+    
+    }
     
     func setupUserInfo(){
         if AuthService.instance.isLoggedIn { // we are logged in
@@ -69,6 +77,7 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
+            tableView.reloadData()
         }
         
     }
@@ -76,10 +85,11 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
  
     @IBAction func addChannelPressed(_ sender: Any) {
-        
+        // add channel just when we are loged in
+        if AuthService.instance.isLoggedIn {
         let addChannel = AddChannelVC() //extend
         addChannel.modalPresentationStyle = .custom
-        present(addChannel, animated: true, completion: nil)
+            present(addChannel, animated: true, completion: nil) }
     }
        //comfort the table view protocol
     
@@ -101,5 +111,20 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource{
         return MessageService.instance.channels.count
     }
     
-    
+    //select tablieview cell / celect chanel
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+       //notify that the channel had been selected
+        NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+        //than slide the menu back
+        self.revealViewController().revealToggle(true)
+    }
 }
+
+
+
+
+
+
+

@@ -54,6 +54,9 @@ let smackPurplePlaceHolder =  #colorLiteral(red: 0.2901960784, green: 0.30196078
 
 // Notification contants
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataC hanged")
+let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+//if we are clikc to the channel name notify about it the chatVC
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelsSelected")
 
 
 
